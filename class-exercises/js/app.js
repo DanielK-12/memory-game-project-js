@@ -57,3 +57,25 @@ console.log(ime + " " + year);
 
 console.log("hello students!");
 console.log('it\'s snowing!');
+
+/* Task #2 
+Write a JavaScript program to convert a length given in feet to meters.
+hint: 1 feet = 0.3048. 
+*/
+
+let lengthInFeet = 150;
+const feetValue = 0.3048;
+let lengthInMeters = 0;
+
+lengthInMeters = lengthInFeet * feetValue;
+console.log(lengthInMeters);
+/*
+Task #3
+Write a program that will calculate the area of a circle
+hint: pi * r * r
+*/
+
+let r = 15;
+const pi = 3.14159;
+let circleArea = pi * r * r;
+console.log("plostinata na krugot e: " + circleArea);
