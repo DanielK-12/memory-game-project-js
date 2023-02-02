@@ -79,3 +79,10 @@ let r = 15;
 const pi = 3.14159;
 let circleArea = pi * r * r;
 console.log("plostinata na krugot e: " + circleArea);
+
+/* My exercise */
+let meter = a;
+let feet = b;
+a = 0.3048;
+b = prompt();
+document.write(a * b);
