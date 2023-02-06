@@ -90,4 +90,4 @@ let x = prompt();
 
 let areaRectangle = (z * x);
 console.log("Area of the rectangle is: " + areaRectangle + "m2");
-console.log(`Area of the rectangle is ${areaRectangle}${m2}`);
+console.log(`Area of the rectangle is ${areaRectangle}${"m2"}`);
