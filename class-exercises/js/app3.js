@@ -31,3 +31,32 @@ let surname = "Kochovski";
 let celosnoIme = fullName(name, surname);
 console.log(celosnoIme);
 console.log(fullName(name, surname));
+
+
+/* 
+Create a function called celsiusToFahrenheit(temp)
+Store a celsius temperature into a variable.
+Convert it to fahrenheit and output "NN°C is NN°F".
+Hint: (celsius*9)/5 + 32;
+Create a function called fahrenheitToCelsius(temp)
+Now store a fahrenheit temperature into a variable
+Convert it to celsius and output "NN°F is NN°C."
+Hint: ((fahrenheit - 32)*5)/9
+*/
+
+function celsiusToFahrenheit(temp) {
+    let celsius = temp;
+    let fahrenheit = (celsius * 9) / 5 + 32;
+    console.log(`${celsius}°C is ${fahrenheit}°F`)
+}
+
+celsiusToFahrenheit(3);
+
+function fahrenheitToCelsius(temp) {
+    let fahrenheit = temp;
+    let celsius = ((fahrenheit - 32) * 5) / 9;
+    console.log(fahrenheit + "°F " + "is " + celsius + "°C");
+}
+
+fahrenheitToCelsius(37);
+
