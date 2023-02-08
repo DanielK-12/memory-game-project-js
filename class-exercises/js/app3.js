@@ -80,3 +80,24 @@ if (budget >= 50) {
     console.log("its movie night at home")
 }
 
+/* Write a function named greateNumb that :
+takes 2 arguments, both numbers.
+retuns whichever number is greater (higher) number.
+Call that function 2 times with different number pairs, and log 
+the output to make sure it works (e.g. "The greater number of 5 and 10 is 10.").
+*/
+
+// function greaterNum(a, b);
+
+let a = 5;
+let b = 10;
+let largest;
+
+if (a > b) {
+    largest = a;
+} else if (a < b) {
+    largest = b;
+}
+
+console.log("The largest number is: " + largest);
+
