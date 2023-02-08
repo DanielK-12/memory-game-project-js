@@ -87,17 +87,131 @@ Call that function 2 times with different number pairs, and log
 the output to make sure it works (e.g. "The greater number of 5 and 10 is 10.").
 */
 
-// function greaterNum(a, b);
+function largest(a, b) {
 
-let a = 5;
-let b = 10;
-let largest;
+    if (a > b) {
+        return largest = a;
+    } else {
+        return largest = b;
+    }
+}
+console.log(largest(20, 10));
+console.log("The largest number is: " + largest);
 
-if (a > b) {
-    largest = a;
-} else if (a < b) {
-    largest = b;
+/* Write a function named assignGrade that:
+takes 1 argument, a number score.
+returns a grade for the score, either "A", "B", "C", "D", or "F".
+Call that function for a few different scores and log the result to make sure it works.
+А - Oсвоени од 90-100 поени 
+B - Освоени од 80-89 поени 
+C - Освоени од 70-79 поени 
+D -Освоени од 65-69 поени 
+F - Освоени помалку од 64 поени  */
+
+// function assignGrade(score);
+
+function assignGrade(score) {
+    if (score >= 90 && score <= 100) {
+        return "A";
+    }
+    else if (score >= 80 && score <= 89) {
+        return "B";
+    }
+    else if (score >= 70 && score <= 79) {
+        return "C";
+    }
+    else if (score >= 65 && score <= 69) {
+        return "D";
+    }
 }
 
-console.log("The largest number is: " + largest);
+let inputScore = prompt("Please input your score here");
+let grade = assignGrade(inputScore);
+console.log(grade);
+
+/*  */
+
+function helloWorld(lang) {
+    if (lang == "de") {
+        console.log("Hallo, Welt");
+    } else if (lang == "es") {
+        console.log("Hola, mundo");
+    } else if (lang == "mk") {
+        console.log("Здраво, свету");
+    } else {
+        console.log("Hello, world");
+    }
+}
+
+let text = "DE";
+let convertedText = text.toLowerCase(text);
+helloWorld("convertedText");
+helloWorld("es");
+helloWorld("mk");
+helloWorld("czk");
+
+/* SWITCH  */
+
+/* 
+Decription: Formula for Chinese Zodiac caluclation:
+(year - 4) % 12. Possible values:
+0 - Rat
+1 - Ox
+2 - Tiger
+3 - Rabbit
+4 - Dragon
+5 - Snake
+6 - Horse
+7 - Goat
+8 - Monkey
+9 - Rooster
+10 - Dog
+11 - Pig
+*/
+
+function chineseZodiac(year) {
+    let result = (year - 4) % 12;
+    if (result == 0) {
+        console.log(year + " is year of the rat")
+    } else if (result == 1) {
+        console.log(year + "is the year of the fox")
+    }
+    else if (result == 2) {
+        console.log(year + "is the year of the tiger")
+    }
+    else if (result == 3) {
+        console.log(year + "is the year of the rabbit")
+    }
+    else if (result == 4) {
+        console.log(year + "is the year of the dragon")
+    }
+    else if (result == 5) {
+        console.log(year + "is the year of the snake")
+    }
+    else if (result == 6) {
+        console.log(year + "is the year of the horse")
+    }
+    else if (result == 7) {
+        console.log(year + "is the year of the goat")
+    }
+    else if (result == 8) {
+        console.log(year + "is the year of the monkey")
+    }
+    else if (result == 9) {
+        console.log(year + "is the year of the rooster")
+    }
+    else if (result == 10) {
+        console.log(year + "is the year of the dog")
+    }
+    else if (result == 11) {
+        console.log(year + "is the year of the pig")
+    }
+    else {
+        console.log("invalid input");
+    }
+}
+
+chineseZodiac(1990);
+
+
 
