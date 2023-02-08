@@ -60,3 +60,23 @@ function fahrenheitToCelsius(temp) {
 
 fahrenheitToCelsius(37);
 
+/* 
+Decription: prompt('Text to show to the user') displays a dialog box with the text
+provided in the parentheses that prompts the visitor for input. Will return null on 'Cancel' or the value provided on 
+'Ok'
+Action: Ask the user how much money he has, and depending on the value, suggest to him what he should do, as in the previous example
+Time to accomplish: 15 minutes.
+*/
+
+let budget = prompt("What is your budget?");
+
+if (budget >= 50) {
+    console.log("go to gevgelija");
+} else if (budget >= 35) {
+    console.log("go to kafana");
+} else if (budget >= 20) {
+    console.log("play some pool or darts")
+} else {
+    console.log("its movie night at home")
+}
+
