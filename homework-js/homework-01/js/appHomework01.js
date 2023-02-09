@@ -13,3 +13,5 @@ function tellFortune(x, y, z, n) {
 }
 
 tellFortune("developer", "Puerto Rico", "Sofia Vokhmina", 3);
+tellFortune("Nba player", "Chikago", "Viki Odintcova", 2);
+tellFortune("Pilot", "Rio De Janeiro", "Kendal Jenner", 4);
