@@ -80,7 +80,7 @@ if (budget >= 50) {
     console.log("its movie night at home")
 }
 
-/* Write a function named greateNumb that :
+/* Write a function named greaterNumb that :
 takes 2 arguments, both numbers.
 retuns whichever number is greater (higher) number.
 Call that function 2 times with different number pairs, and log 
@@ -95,7 +95,8 @@ function largest(a, b) {
         return largest = b;
     }
 }
-console.log(largest(20, 10));
+// console.log(largest(20, 10));
+console.log(largest(40, 60));
 console.log("The largest number is: " + largest);
 
 /* Write a function named assignGrade that:
@@ -122,6 +123,9 @@ function assignGrade(score) {
     }
     else if (score >= 65 && score <= 69) {
         return "D";
+    }
+    else {
+        console.log("Requirments not met, please try again.")
     }
 }
 
