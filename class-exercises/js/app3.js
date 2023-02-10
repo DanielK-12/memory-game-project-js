@@ -6,8 +6,8 @@ Call it with different arguments and print the result
 
 /*define function */
 function sumOfNum(x, y) {
-    let result = x + y;
-    return result;
+  let result = x + y;
+  return result;
 }
 
 /* call the function */
@@ -22,7 +22,7 @@ console.log(sumOfNum(3, 4));
 
 function fullName(firstName, lastName) {
 
-    return firstName + " " + lastName
+  return firstName + " " + lastName
 }
 
 let name = "Daniel";
@@ -45,17 +45,17 @@ Hint: ((fahrenheit - 32)*5)/9
 */
 
 function celsiusToFahrenheit(temp) {
-    let celsius = temp;
-    let fahrenheit = (celsius * 9) / 5 + 32;
-    console.log(`${celsius}°C is ${fahrenheit}°F`)
+  let celsius = temp;
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  console.log(`${celsius}°C is ${fahrenheit}°F`)
 }
 
 celsiusToFahrenheit(3);
 
 function fahrenheitToCelsius(temp) {
-    let fahrenheit = temp;
-    let celsius = ((fahrenheit - 32) * 5) / 9;
-    console.log(fahrenheit + "°F " + "is " + celsius + "°C");
+  let fahrenheit = temp;
+  let celsius = ((fahrenheit - 32) * 5) / 9;
+  console.log(fahrenheit + "°F " + "is " + celsius + "°C");
 }
 
 fahrenheitToCelsius(37);
@@ -71,31 +71,32 @@ Time to accomplish: 15 minutes.
 let budget = prompt("What is your budget?");
 
 if (budget >= 50) {
-    console.log("go to gevgelija");
+  console.log("go to gevgelija");
 } else if (budget >= 35) {
-    console.log("go to kafana");
+  console.log("go to kafana");
 } else if (budget >= 20) {
-    console.log("play some pool or darts")
+  console.log("play some pool or darts");
 } else {
-    console.log("its movie night at home")
+  console.log("its movie night at home");
 }
 
 /* switch case scenario */
 
-let wallet = prompt("what is your budget?")
+let wallet = prompt("what is your budget?");
+
 
 switch (true) {
-    case wallet >= 50:
-        console.log("go to gevgelija");
-        break;
-    case wallet >= 35:
-        console.log("go to kafana");
-        break;
-    case wallet >= 20:
-        console.log("play some pool or darts");
-        break;
-    default:
-        console.log("its movie night at home");
+  case wallet >= 50:
+    console.log("go to gevgelija");
+    break;
+  case wallet >= 35:
+    console.log("go to kafana");
+    break;
+  case wallet >= 20:
+    console.log("play some pool or darts");
+    break;
+  default:
+    console.log("its movie night at home");
 }
 
 /* Write a function named greaterNumb that :
@@ -107,11 +108,11 @@ the output to make sure it works (e.g. "The greater number of 5 and 10 is 10.").
 
 function largest(a, b) {
 
-    if (a > b) {
-        return largest = a;
-    } else {
-        return largest = b;
-    }
+  if (a > b) {
+    return largest = a;
+  } else {
+    return largest = b;
+  }
 }
 // console.log(largest(20, 10));
 console.log(largest(40, 60));
@@ -130,21 +131,21 @@ F - Освоени помалку од 64 поени  */
 // function assignGrade(score);
 
 function assignGrade(score) {
-    if (score >= 90 && score <= 100) {
-        return "A";
-    }
-    else if (score >= 80 && score <= 89) {
-        return "B";
-    }
-    else if (score >= 70 && score <= 79) {
-        return "C";
-    }
-    else if (score >= 65 && score <= 69) {
-        return "D";
-    }
-    else {
-        console.log("Requirments not met, please try again.")
-    }
+  if (score >= 90 && score <= 100) {
+    return "A";
+  }
+  else if (score >= 80 && score <= 89) {
+    return "B";
+  }
+  else if (score >= 70 && score <= 79) {
+    return "C";
+  }
+  else if (score >= 65 && score <= 69) {
+    return "D";
+  }
+  else {
+    console.log("Requirments not met, please try again.")
+  }
 }
 
 let inputScore = prompt("Please input your score here");
@@ -154,15 +155,15 @@ console.log(grade);
 /*  */
 
 function helloWorld(lang) {
-    if (lang == "de") {
-        console.log("Hallo, Welt");
-    } else if (lang == "es") {
-        console.log("Hola, mundo");
-    } else if (lang == "mk") {
-        console.log("Здраво, свету");
-    } else {
-        console.log("Hello, world");
-    }
+  if (lang == "de") {
+    console.log("Hallo, Welt");
+  } else if (lang == "es") {
+    console.log("Hola, mundo");
+  } else if (lang == "mk") {
+    console.log("Здраво, свету");
+  } else {
+    console.log("Hello, world");
+  }
 }
 
 let text = "DE";
@@ -192,45 +193,45 @@ Decription: Formula for Chinese Zodiac caluclation:
 */
 
 function chineseZodiac(year) {
-    let result = (year - 4) % 12;
-    if (result == 0) {
-        console.log(year + " is year of the rat")
-    } else if (result == 1) {
-        console.log(year + "is the year of the fox")
-    }
-    else if (result == 2) {
-        console.log(year + "is the year of the tiger")
-    }
-    else if (result == 3) {
-        console.log(year + "is the year of the rabbit")
-    }
-    else if (result == 4) {
-        console.log(year + "is the year of the dragon")
-    }
-    else if (result == 5) {
-        console.log(year + "is the year of the snake")
-    }
-    else if (result == 6) {
-        console.log(year + "is the year of the horse")
-    }
-    else if (result == 7) {
-        console.log(year + "is the year of the goat")
-    }
-    else if (result == 8) {
-        console.log(year + "is the year of the monkey")
-    }
-    else if (result == 9) {
-        console.log(year + "is the year of the rooster")
-    }
-    else if (result == 10) {
-        console.log(year + "is the year of the dog")
-    }
-    else if (result == 11) {
-        console.log(year + "is the year of the pig")
-    }
-    else {
-        console.log("invalid input");
-    }
+  let result = (year - 4) % 12;
+  if (result == 0) {
+    console.log(year + " is year of the rat")
+  } else if (result == 1) {
+    console.log(year + "is the year of the fox")
+  }
+  else if (result == 2) {
+    console.log(year + "is the year of the tiger")
+  }
+  else if (result == 3) {
+    console.log(year + "is the year of the rabbit")
+  }
+  else if (result == 4) {
+    console.log(year + "is the year of the dragon")
+  }
+  else if (result == 5) {
+    console.log(year + "is the year of the snake")
+  }
+  else if (result == 6) {
+    console.log(year + "is the year of the horse")
+  }
+  else if (result == 7) {
+    console.log(year + "is the year of the goat")
+  }
+  else if (result == 8) {
+    console.log(year + "is the year of the monkey")
+  }
+  else if (result == 9) {
+    console.log(year + "is the year of the rooster")
+  }
+  else if (result == 10) {
+    console.log(year + "is the year of the dog")
+  }
+  else if (result == 11) {
+    console.log(year + "is the year of the pig")
+  }
+  else {
+    console.log("invalid input");
+  }
 }
 
 chineseZodiac(1990);
