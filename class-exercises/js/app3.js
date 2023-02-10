@@ -80,6 +80,24 @@ if (budget >= 50) {
     console.log("its movie night at home")
 }
 
+/* switch case scenario */
+
+let wallet = prompt("what is your budget?")
+
+switch (true) {
+    case wallet >= 50:
+        console.log("go to gevgelija");
+        break;
+    case wallet >= 35:
+        console.log("go to kafana");
+        break;
+    case wallet >= 20:
+        console.log("play some pool or darts");
+        break;
+    default:
+        console.log("its movie night at home");
+}
+
 /* Write a function named greaterNumb that :
 takes 2 arguments, both numbers.
 retuns whichever number is greater (higher) number.
