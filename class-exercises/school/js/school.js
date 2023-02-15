@@ -14,7 +14,7 @@ function printGrades(subjects, grades, element) {
   element.innerHTML += "</ul>";
 }
 
-function pringStudents(students, element) {
+function printStudents(students, element) {
   element.innerHTML += "<ol>";
   for (let i = 0; i < students.length; i++) {
     element.innerHTML += `<li>${students[i]}</li>`;
@@ -33,7 +33,7 @@ function schoolPanel(role, name) {
     titleDiv.innerHTML += "<h1>Hello " + name + "</h1>";
     titleDiv.innerHTML += "<p>Welcome to your teacher page </p>";
     contentDiv.innerHTML += "<h3>Your list of students: </h3>"
-    pringStudents(students, contentDiv);
+    printStudents(students, contentDiv);
   }
   else {
     titleDiv.innerHTML += "<h1>Your login was unsuccessful</h1>";
