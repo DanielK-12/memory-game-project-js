@@ -3,13 +3,13 @@ let myHeader = document.getElementById("myTitle");
 console.log(myHeader); //returns a single unique element (the first one it finds and ends the operation).
 console.log(myHeader.innerHTML);
 
-//ACCES USING CLASS NAME
+//ACCESS USING CLASS NAME
 
 let paragraphs = document.getElementsByClassName("myParagraph");//Returns an array of elements
 console.log(paragraphs);
 console.log(paragraphs[1].innerHTML);
 
-//ACCES USING TAG NAME
+//ACCESS USING TAG NAME
 let texts = document.getElementsByTagName("text");
 console.log(texts);
 
