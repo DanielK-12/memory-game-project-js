@@ -96,7 +96,7 @@ Finaly print the values
 Time to accomplish: 15 minutes */
 const elFirstName = document.getElementById('first-name');
 const elLastName = document.getElementById('last-name');
-const elEmail = document.getElementById('last-name');
+const elEmail = document.getElementById('email');
 const elPassword = document.getElementById('password');
 const printValues = document.getElementById("yourValues");
 const confirmButton = document.getElementById("kopche");
