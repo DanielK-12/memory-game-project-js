@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register form</title>
+</head>
+
+<body>
+  <!-- // create a user register form - full name, username, password, confirm password -->
+  <section id="registerForm">
+    <h2>Register</h2>
+    <form>
+      <input type="text" name="name" id="name" placeholder="Full name">
+      <br><br>
+      <input type="text" name="username" id="username" placeholder="Username">
+      <br><br>
+      <input type="password" name="pass" id="pass" placeholder="Password">
+      <br><br>
+      <input type="password" name="repass" id="repass" placeholder="Repeat password">
+    </form>
+    <br><br>
+    <button id="create-btn">Create account</button>
+    <br><br>
+    <ul id="result"></ul>
+  </section>
+  <section id="loginForm" style="display: none;">
+    <h2>Login</h2>
+    <form>
+      <input type="text" name="l-user" id="l-user">
+      <br><br>
+      <input type="password" name="l-pass" id="l-pass">
+      <br><br>
+    </form>
+    <button id="login-btn">Login</button>
+    <br><br>
+    <p id="loginResult">
+      <!-- print login-result here -->
+    </p>
+  </section>
+
+  <!-- load my app here -->
+  <script src="registerJS/register.js"></script>
+</body>
+
+</html>
