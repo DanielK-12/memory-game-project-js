@@ -1,0 +1,19 @@
+.main {
+    width: 600px;
+    margin: 50px auto;
+}
+
+.login input {
+    margin-bottom: 10px;
+}
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+    padding: 10px 15px;
+    width: 100%;
+    flex: 1;
+}
+
+.btn {
+    padding: 10px 15px;
+}
