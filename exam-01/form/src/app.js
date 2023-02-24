@@ -12,3 +12,23 @@ const passwords = ["admin123", "student123", "user123", "tester123"];
  *  eg input: username: admin@sedc.com password: lozinka251
  *  eg output: username does not exist or wrong password.
  */
+
+const register = document.querySelector('#login');
+const loginBtn = document.getElementById('login-btn');
+
+function checkInputs() {
+  let errors = document.getElementById("login-status").innerText;
+  if (users.length < 3) {
+    errors.innerText("Username must contain more than 2 characters");
+  } if (passwords.length < 5) {
+    errors.push("Password must contain more than 5 characters");
+  }
+  return errors;
+}
+// print the array of errors
+function printErrors(errors) {
+  result.innerHTML = '';
+  for (let i = 0; i < errors.length; i++) {
+    result.innerHTML += `${errors[i]}`
+  }
+}
