@@ -14,10 +14,20 @@ const passwords = ["admin123", "student123", "user123", "tester123"];
  */
 
 const loginBtn = document.getElementById('login-btn');
-let userName = document.getElementById('username').value
+let userName = document.getElementById('username').value;
+let pass = document.getElementById('password').value;
 
 
 loginBtn.addEventListener('click', () => {
-  const loginBtn = document.getElementById('login-btn');
-  loginBtn.innerHTML += `<p>${}`
+
+  document.getElementById('login-status') += '';
+  if (userName === users[0] && pass === passwords[0]) {
+  } else if (userName === users[1] && pass === passwords[1]) {
+
+  } else if (userName === users[2] && pass === passwords[2]);
+
+  else if (userName === users[3] && pass === passwords[3]);
+  else {
+    document.getElementById('login-status').innerHTML = `Username or passwords must be longer than 3/5 characters`
+  }
 });
