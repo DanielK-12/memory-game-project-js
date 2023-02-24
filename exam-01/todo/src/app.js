@@ -8,7 +8,8 @@ const btnAddTask = document.getElementById('btn-add-task');
 const addTask = document.getElementById('add-task');
 
 btnAddTask.addEventListener('click', () => {
-  var RenderTodoList = document.getElementById('render-todo-list');
-  RenderTodoList.innerHTML += `<input type='checkbox'>${addTask.value}</input>`;
+  let RenderTodoList = document.getElementById('render-todo-list');
+  RenderTodoList.innerHTML += `<input type='checkbox'>${addTask.value}</input><br/>`;
   addTask.value = "";
 });
+
