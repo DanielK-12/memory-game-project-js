@@ -69,3 +69,7 @@ const student = {
 };
 
 console.log(student);
+
+// exercise 2
+delete student.class;
+console.log(student);
