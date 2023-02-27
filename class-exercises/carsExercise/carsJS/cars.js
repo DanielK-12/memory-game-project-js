@@ -18,7 +18,7 @@ const car = {
 }
 let input = prompt()
 console.log(car.returnInfo());
-console.log(`For the distance of 500km you will need  ${car.calcFuelConsumption(500)}L of ${car.fuel}.`);
+console.log(`For the distance of ${input} you will need: ${car.calcFuelConsumption(input)}Liters of ${car.fuel}.`);
 
 // function constructor
 function Bike(model, color, year, fuel, fuelConsumption) {
@@ -34,7 +34,7 @@ function Bike(model, color, year, fuel, fuelConsumption) {
   }
   // method to prin the bike info
   this.printInfo = function () {
-    return `The bike ${this.model} is from ${this.year} and has a color ${this.color}`;
+    return `The bike ${this.model}is from ${this.year} and has a color ${this.color}`;
   }
 };
 
