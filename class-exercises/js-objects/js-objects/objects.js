@@ -65,7 +65,14 @@ console.log(hotelStruga);
 const student = {
   name: "Daniel Kochovski",
   class: "II",
-  rollnum: "12"
+  rollnum: "12",
+
+  printInfo: function () {
+    console.log(`${this.name} ${this.class} ${this.rollnum}`)
+  },
+  returnInfo: function () {
+    return `${this.name} ${this.class} ${this.rollnum}`
+  }
 };
 
 console.log(student);
@@ -73,3 +80,21 @@ console.log(student);
 // exercise 2
 delete student.class;
 console.log(student);
+
+// exercise 3
+student.printInfo();
+student.returnInfo();
+
+function propertyExists(obj, property) {
+  return obj[property] !== undefined ? `Postoi` : `Ne postoi`;
+  // if (obj[property] !== undefined) {
+  //   return `postoi`;
+  // }
+  // else {
+  //   return `ne postoi`;
+  // }
+}
+
+console.log(propertyExists(student, "surname"));
+console.log(propertyExists(student, "name"));
+
