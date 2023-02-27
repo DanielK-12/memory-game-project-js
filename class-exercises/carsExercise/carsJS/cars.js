@@ -1,6 +1,7 @@
 // exercise 4
 //Model, color, year, fuel, fuelConsumption,
-
+const d = new Date();
+let currentYear = d.getFullYear();
 
 const car = {
   model: "mercedes-benz",
@@ -9,14 +10,21 @@ const car = {
   fuel: "petrol",
   fuelConsumption: 15,
 
+
+  yearOld: function () {
+    return (currentYear - this.year);
+  },
+
   calcFuelConsumption: function (distance) {
     return (this.fuelConsumption * distance) / 100;
   },
   returnInfo: function () {
-    return `This car ${this.model} color ${this.color} is from ${this.year}`
-  }
+    return `This car is: ${this.model}, the color is: ${this.color} and is produced:  ${this.year}year.`
+  },
+
 }
-let input = prompt()
+console.log(`The car is : ${car.model}, the color is: ${car.color} and is ${car.yearOld()} years old.`);
+let input = prompt();
 console.log(car.returnInfo());
 console.log(`For the distance of ${input} you will need: ${car.calcFuelConsumption(input)}Liters of ${car.fuel}.`);
 
