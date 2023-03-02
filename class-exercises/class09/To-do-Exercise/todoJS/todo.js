@@ -11,6 +11,14 @@ addBtn.addEventListener('click', function () {
   printTasks(addTask.value);
 });
 
+// 3. kopceto add task da raboti pri pritiskanje na enter
+addTask.addEventListener("keyup", function (event) {
+  if (event.code === 'Enter') {
+    printTasks(addTask.value);
+  }
+});
+
+
 // print the tasks
 
 function printTasks(task) {
@@ -32,6 +40,17 @@ taskList.addEventListener('click', function (e) {
   }
 });
 
-//1. da se izraboti array of tasks
+// 1. da se izraboti array of tasks
+const inputArray = [];
+
+function addToArray() {
+  inputArray = document.getElementById('add-task').value
+}
+console.log(inputArray);
+
+function displayArray() {
+
+}
+
+
 // 2. da se pecati toj array
-// 3. kopceto add task da raboti pri pritiskanje na enter
