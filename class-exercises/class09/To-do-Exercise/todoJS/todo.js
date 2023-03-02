@@ -55,6 +55,7 @@ function addToArray() {
 }
 
 
+// 2. da se pecati toj array
 
 function displayArray() {
   for (let i = 0; i < inputArray.length; i++) {
@@ -63,4 +64,3 @@ function displayArray() {
 }
 
 
-// 2. da se pecati toj array
