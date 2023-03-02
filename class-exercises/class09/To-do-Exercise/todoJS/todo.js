@@ -9,6 +9,7 @@ let counter = 1;
 
 addBtn.addEventListener('click', function () {
   printTasks(addTask.value);
+  addToArray(addTask.value);
 });
 
 // 3. kopceto add task da raboti pri pritiskanje na enter
@@ -28,7 +29,7 @@ function printTasks(task) {
   } else {
     taskList.innerHTML += `<li>${counter++}.${task}</li>`;
     // counter++;
-    addTask.value = ``;
+    // addTask.value = ``;
   }
 }
 
@@ -44,9 +45,11 @@ taskList.addEventListener('click', function (e) {
 const inputArray = [];
 
 function addToArray() {
-  inputArray = document.getElementById('add-task').value
+  inputArray.push(addTask.value);
+  console.log(inputArray);
 }
-console.log(inputArray);
+
+
 
 function displayArray() {
 

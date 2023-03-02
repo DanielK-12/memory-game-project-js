@@ -24,7 +24,7 @@ submit.addEventListener('click', () => {
   htmlToAdd += "</tbody>";
   table.innerHTML = htmlToAdd;
 
-})
+});
 
 
 
