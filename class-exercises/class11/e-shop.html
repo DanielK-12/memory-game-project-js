@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our first ever E-shop</title>
+  <style>
+    #products {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #products li {
+      flex-grow: 1;
+      margin: 10px;
+      padding: 15px;
+      box-shadow: 1px 1px 1px 1px #e9edc9;
+    }
+
+    th,
+    td {
+      padding: 20px;
+    }
+
+    .cheaper-product {
+      color: green;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h2>Shopping cart</h2>
+    <ol id="shopping-cart">
+
+    </ol>
+  </section>
+  <section>
+    <h2>My Store</h2>
+    <div>
+      <ul id="products">
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div id="compare">
+    </div>
+  </section>
+  <!-- loading my app -->
+  <script src="class11Js/e-shop.js"></script>
+</body>
+
+</html>
