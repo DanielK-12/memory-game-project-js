@@ -4,7 +4,7 @@ const d = new Date();
 let currentYear = d.getFullYear();
 
 const car = {
-  model: "mercedes-benz",
+  model: "mercedes-benz 300SL",
   color: "silver",
   year: 1957,
   fuel: "petrol",
