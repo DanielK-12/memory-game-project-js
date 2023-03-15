@@ -30,6 +30,16 @@ function School(name) {
       this.listStudents();
     }
   }
+  // search by name 
+  this.searchByname = function (name) {
+    const student = this.students.find(x => x.name.toLowerCase() === name.toLowerCase());
+    if (student) {
+      const element = document.querySelector("#search-list");
+      element.innerHTML += `<li>${student.name}, ${student.index}
+      <a href="Mailto:${student.email}">Send Email</a>
+      </li>`;
+    }
+  }
 }
 
 // define a student
@@ -64,4 +74,11 @@ document.addEventListener('click', function (e) {
     const index = parseInt(e.target.closest("li").getAttribute("data-index"));
     mySchool.deleteStudent(index);
   }
+});
+
+// event listener for search input 
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("input", function () {
+  const name = searchInput.value;
+  mySchool.searchByname(name);
 });
