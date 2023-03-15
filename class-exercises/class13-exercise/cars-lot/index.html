@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent a car calculator</title>
+  <style>
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 1000;
+      background-color: #cecece;
+      transform: scale(0) translate(-50%, -50%);
+      width: 650px;
+      height: 450px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rent a car application</h1>
+  <h3>Enter the car details</h3>
+  <form>
+    <input type="text" name="model" id="model" placeholder="Car Model">
+    <input type="number" name="year" id="year" placeholder="Production year">
+    <input type="color" name="color" id="color">
+    <input type="text" name="fuel" id="fuel" placeholder="Fuel Type">
+    <input type="number" name="fuel-consumption" id="fuel-consumption" placeholder="Fuel Consumption">
+    <input type="number" name="distance" id="distance" placeholder="Enter the distance">
+    <br>
+    <button id="add-btn">Add Vehicle</button>
+  </form>
+  <div id="car-list">
+    <!-- list the added vehicles -->
+  </div>
+  <div id="modal" class="modal">
+    <!-- print the distance cost -->
+  </div>
+
+  <!-- load my app -->
+  <script src="cars-js/app.js"></script>
+</body>
+
+</html>
