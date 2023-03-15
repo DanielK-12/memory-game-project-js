@@ -20,7 +20,18 @@ function Carlot(name) {
     }
     element.innerHTML += htmlToAdd;
   }
+
+  // calculate fuel consumption
+  this.calculateFuelConsumption = function (id) {
+    const car = this.cars.find(x => x.id === id);
+    if (car) {
+      return (car.fuelConsumption * car.distance) / 100;
+    }
+
+  }
 }
+
+
 
 // define a car object
 
@@ -51,4 +62,26 @@ addBtn.addEventListener('click', function (e) {
   myLot.addCar(new Car(model, year, color, fuel, fuelConsumption, distance));
   myLot.listCars();
 });
+
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains("delete-btn")) {
+    // for homework delete the car from cars
+  } else if (e.target.classList.contains("calc-btn")) {
+    const carId = parseInt(e.target.parentElement.id);
+    console.log(myLot.calculateFuelConsumption(carId));
+    displayModal(myLot.calculateFuelConsumption(carId));
+  }
+  else if (e.target.classList.contains("close-modal")) {
+    const modalWindow = document.getElementById("modal");
+    modalWindow.classList.remove("active");
+  }
+});
+
+function displayModal(fuelConsumption) {
+  const modalWindow = document.getElementById("modal");
+  modalWindow.classList.add("active");
+  modalWindow.innerHTML = `<h3>Fuel consumption is: ${fuelConsumption}</h3>
+  <button class="close-modal">X</button>`;
+}
+
 
