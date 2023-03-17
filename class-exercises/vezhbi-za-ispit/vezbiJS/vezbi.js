@@ -150,29 +150,37 @@ console.log(time);
 let hoursOfDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 let n = hoursOfDay.length;
 
-let k = time;
-k = k % n;
-let i, j;
-
-
-
-for (i = n - k, j = n - 1; i < j; i++, j--) {
-  let clock = hoursOfDay[i];
-  hoursOfDay[i] = hoursOfDay[j];
-  hoursOfDay[j] = clock;
+let result = [];
+for (let i = time; i >= 0; i--) {
+  result.push(i + ":00");
 }
-
-for (i = 0, j = n - 1; i < j; i++, j--) {
-  let clock = hoursOfDay[i];
-  hoursOfDay[i] = hoursOfDay[j];
-  hoursOfDay[j] = clock;
+for (let i = n - 1; i > time; i--) {
+  result.push(i + ":00");
 }
+console.log(result);
+// let k = time;
+// k = k % n;
+// let i, j;
 
 
-for (let i = 0; i < n; i++) {
-}
 
-console.log(k + hoursOfDay);
+// for (i = n - k, j = n - 1; i < j; i++, j--) {
+//   let clock = hoursOfDay[i];
+//   hoursOfDay[i] = hoursOfDay[j];
+//   hoursOfDay[j] = clock;
+// }
+
+// for (i = 0, j = n - 1; i < j; i++, j--) {
+//   let clock = hoursOfDay[i];
+//   hoursOfDay[i] = hoursOfDay[j];
+//   hoursOfDay[j] = clock;
+// }
+
+
+// for (let i = 0; i < n; i++) {
+// }
+
+// console.log(k + hoursOfDay);
 
 
 
