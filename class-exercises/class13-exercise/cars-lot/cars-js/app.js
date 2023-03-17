@@ -52,6 +52,7 @@ const addBtn = document.querySelector("#add-btn");
 // event listeners
 addBtn.addEventListener('click', function (e) {
   e.preventDefault();
+
   const model = document.getElementById("model").value;
   const year = document.getElementById("year").value;
   const color = document.getElementById("color").value;
@@ -59,8 +60,17 @@ addBtn.addEventListener('click', function (e) {
   const fuelConsumption = document.getElementById("fuel-consumption").value;
   const distance = document.getElementById("distance").value;
 
-  myLot.addCar(new Car(model, year, color, fuel, fuelConsumption, distance));
-  myLot.listCars();
+  const errorEl = document.querySelector(".error-msg");
+
+  if (model == 0) {
+    errorEl.textContent = "Please enter a value";
+    errorEl.classList.add("is-error");
+  } else {
+    errorEl.classList.remove("is-error");
+    myLot.addCar(new Car(model, year, color, fuel, fuelConsumption, distance));
+    myLot.listCars();
+  }
+
 });
 
 document.addEventListener('click', function (e) {

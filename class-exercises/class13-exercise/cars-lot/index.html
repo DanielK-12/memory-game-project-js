@@ -25,6 +25,14 @@
       pointer-events: all;
       transform: scale(1);
     }
+
+    .error-msg {
+      display: none;
+    }
+
+    .error-msg.is-error {
+      display: block;
+    }
   </style>
 </head>
 
@@ -40,6 +48,7 @@
     <input type="number" name="distance" id="distance" placeholder="Enter the distance">
     <br>
     <button id="add-btn">Add Vehicle</button>
+    <p class="error-msg"></p>
   </form>
   <div id="car-list">
     <!-- list the added vehicles -->
