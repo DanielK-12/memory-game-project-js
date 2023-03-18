@@ -18,7 +18,7 @@ function Carlot(name) {
       htmlToAdd += `<li id="${car.id}" data-index="${car.id}" style="color:${car.color};">
       ${car.model}, year: ${car.year}, fuel consumption: ${car.fuelConsumption}, ${car.fuel}${actionBtns}</li>`;
     }
-    element.innerHTML += htmlToAdd;
+    element.innerHTML = htmlToAdd;
   }
 
   // calculate fuel consumption
@@ -60,18 +60,33 @@ addBtn.addEventListener('click', function (e) {
   const fuelConsumption = document.getElementById("fuel-consumption").value;
   const distance = document.getElementById("distance").value;
 
+
   const errorEl = document.querySelector(".error-msg");
+  let errors = [];
 
-  if (model == 0) {
-    errorEl.textContent = "Please enter a value";
-    errorEl.classList.add("is-error");
+  let verifyInputs = checkInputs(model, year, fuel, fuelConsumption);
+  if (verifyInputs.length > 0) {
+    // print errors
+    console.log(verifyInputs);
   } else {
-    errorEl.classList.remove("is-error");
-    myLot.addCar(new Car(model, year, color, fuel, fuelConsumption, distance));
-    myLot.listCars();
+    // print the cars
   }
-
 });
+function checkInputs(model, year, fuel, fuelConsumption) {
+  let errors = [];
+  if (model === "") {
+    errors.push("Enter a car model");
+
+  } if (year === "") {
+    errors.push("Please enter a year of production");
+  } if (fuel === "") {
+    errors.push("please enter a fuel type");
+  } if (fuelConsumption === "") {
+    errors.push("please enter fuel consumption");
+  }
+  return errors;
+
+}
 
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains("delete-btn")) {

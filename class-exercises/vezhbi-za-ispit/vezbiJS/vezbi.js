@@ -143,6 +143,9 @@ In every table cell print which row and column it is (ex. Row-3 Column-1)
 //   let table = document.querySelector('#table tbody');
 //   table.innerHTML += `<tr><td>${firstName.value}</td><td>${lastName.value}</td><td>${email.value}</td><td>${pass.value}</td></tr>`
 // }
+
+// time = 3
+
 let today = new Date();
 let time = today.getHours();
 console.log(time);
@@ -151,10 +154,10 @@ let hoursOfDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 let n = hoursOfDay.length;
 
 let result = [];
-for (let i = time; i >= 0; i--) {
+for (let i = time; i > 0; i--) {
   result.push(i + ":00");
 }
-for (let i = n - 1; i > time; i--) {
+for (let i = n; i > time; i--) {
   result.push(i + ":00");
 }
 console.log(result);
