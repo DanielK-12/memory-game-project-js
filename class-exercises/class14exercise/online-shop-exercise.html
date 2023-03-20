@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Smartphone Store</title>
+  <link rel="stylesheet" href="style/main.css">
+  <script src="app/app.js" defer></script>
+</head>
+
+<body>
+  <section class="main">
+    <h1>Simple Smarthphone Shop</h1>
+    <div class="container">
+      <div class="form-wrapper">
+        <form class="form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="Iphone 15 Super Plus PRO+">
+          </div>
+          <div class="form-group">
+            <label for="manufacturer">Manufacturer:</label>
+            <input type="text" name="manufacturer" id="manufacturer" value="Apple inc.">
+          </div>
+          <div class="form-group">
+            <label for="cover">Cover URL</label>
+            <input type="text" name="cover" id="cover"
+              value="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg">
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" value="85000">
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantaty</label>
+            <input type="number" name="quantity" id="quantity" value="20">
+          </div>
+          <div class="form-group">
+            <label for="description">Short description</label>
+            <textarea name="description" id="description" cols="30" rows="10">Phone Description... </textarea>
+          </div>
+          <div class="form-group">
+            <button id="add-btn" class="btn">Add</button>
+          </div>
+        </form>
+      </div>
+      <div class="result-wrapper">
+        <div class="shopping-group">
+          <div>
+            <h3>Shopping Cart</h3>
+            <ol id="shopping-cart">
+              <li id="1">Iphone 15 Super Plus PRO+ <a href="#" class="remove-shopping-item" id="1">Remove</a> </li>
+            </ol>
+          </div>
+          <div>
+            <h3>Wishlist</h3>
+            <ol id="wishlist">
+              <li id="1">Iphone 15 Super Plus PRO+, 85000 den. <a href="#" class="remove-wishlist-item"
+                  id="1">Remove</a> </li>
+            </ol>
+          </div>
+        </div>
+        <ol id="phones-list">
+          <li id="1" class="product">
+            <div class="product-title">Iphone 15 Super Plus PRO+</div>
+            <div class="product-img"><img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg"
+                alt="phone img"></div>
+            <div class="product-desc">Phone Description...</div>
+            <div class="product-price">85000</div>
+            <div class="product-quantity">Quantity: 20</div>
+            <div class="product-actions">
+              <button class="buy-btn btn">Add to Cart</button>
+              <button class="wishlist-btn btn">Add to Wishlist</button>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
