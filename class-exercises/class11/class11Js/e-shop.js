@@ -2,14 +2,14 @@
 function Store(name) {
   this.name = name; // name of the store
   this.products = []; // array of products
-  this.shoppingCartProducts = []; //array of products that in the shopping cart
+  this.shoppingCartProducts = []; //array of products that go in the shopping cart
 
   //methods
   this.addProduct = function (product) {
     this.products.push(product);
   }
 
-  //list the available prodcuts(in stock)
+  //list the available products(in stock)
   this.listProducts = function () {
     const element = document.querySelector('#products');
     let htmlToAdd = '';
@@ -92,7 +92,7 @@ myStore.addProduct(phoneIphone);
 myStore.addProduct(phoneMotorola);
 myStore.addProduct(phoneHuawei);
 
-myStore.listProducts(); //calls the method to pring the objects to the screen
+myStore.listProducts(); //calls the method to print the objects to the screen
 
 
 document.addEventListener('click', function (e) {
