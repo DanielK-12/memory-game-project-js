@@ -7,12 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rent a car calculator</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+    body {
+      background-color: #1F1F1F;
+      color: #e8eaed;
+      font-family: 'poppins', sans-serif;
+    }
+
     .modal {
       position: fixed;
       top: 50%;
       left: 50%;
       z-index: 1000;
-      background-color: #cecece;
+      background-color: rgba(0, 0, 0, 0.8);
       transform: scale(0) translate(-50%, -50%);
       width: 650px;
       height: 450px;
@@ -21,17 +29,46 @@
     }
 
     .modal.active {
+      width: 400px;
+      height: 200px;
       opacity: 1;
       pointer-events: all;
-      transform: scale(1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
     }
 
-    .error-msg {
-      display: none;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 500px;
+      margin: 0 auto;
     }
 
-    .error-msg.is-error {
-      display: block;
+    #model,
+    #year,
+    #fuel,
+    #fuel-consumption,
+    #distance {
+      padding: 10px 10px;
+      border-radius: 5px;
+      border: solid salmon 2px;
+    }
+
+    #color {
+      align-self: center;
+    }
+
+    button {
+      padding: 7px 14px;
+      background-color: salmon;
+      color: #e8eaed;
+      border: #e8eaed solid 2px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 600;
     }
   </style>
 </head>
