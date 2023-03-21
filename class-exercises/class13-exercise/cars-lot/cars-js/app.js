@@ -181,10 +181,8 @@ document.addEventListener('click', function (e) {
     deleteModal();
   } else if (e.target.classList.contains('delete')) {
     // const id = parseInt(e.target.closest("li").getAttribute("data-index"));
-    const id = parseInt(document.querySelectorAll('[data-index]')[0].getAttribute("data-index"));
-    console.log(id)
+    const id = parseInt(document.querySelector('li').getAttribute("data-index"));
     myLot.deleteCar(id);
-    console.log(myLot)
     const deleteModalWindow = document.getElementById('delete-modal');
     deleteModalWindow.classList.remove('active');
   } else if (e.target.classList.contains('dont')) {
