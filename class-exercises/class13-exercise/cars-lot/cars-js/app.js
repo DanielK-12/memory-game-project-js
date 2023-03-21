@@ -138,8 +138,16 @@ function Carlot(name) {
       return (car.fuelConsumption * car.distance) / 100;
     }
   }
+  // delete car method
+  this.deleteCar = function (id) {
+    const car = this.cars.find(x => x.id === id);
+    if (car) {
+      const position = this.cars.indexOf(car);
+      this.cars.splice(position, 1);
+      this.listCars();
+    }
+  }
 }
-
 function Car(model, year, color, fuel, fuelConsumption, distance) {
   this.id = Date.now();
   this.model = model;
@@ -170,7 +178,8 @@ addBtn.addEventListener('click', function (e) {
 
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('delete-btn')) {
-
+    const id = parseInt(e.target.closest("li").getAttribute("data-index"));
+    myLot.deleteCar(id);
   } else if (e.target.classList.contains("calc-btn")) {
     const carId = parseInt(e.target.parentElement.id);
     console.log(myLot.calculateFuelConsumption(carId));
@@ -187,4 +196,3 @@ function displayModal(fuelConsumption) {
   modalWindow.innerHTML = `<h3>Fuel consumption is: ${fuelConsumption}</h3>
   <button class="close-modal">X</button>`;
 }
-
