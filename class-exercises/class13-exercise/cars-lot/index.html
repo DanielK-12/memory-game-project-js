@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rent a car calculator</title>
+  <title>Rent a car application</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
@@ -111,7 +111,8 @@
       margin: 0 auto;
     }
 
-    .close-modal-window {
+    .close-modal-window,
+    .delete-modal {
       position: fixed;
       top: 50%;
       left: 50%;
@@ -124,7 +125,8 @@
       pointer-events: none;
     }
 
-    .close-modal-window.active {
+    .close-modal-window.active,
+    .delete-modal.active {
       width: 400px;
       height: 200px;
       opacity: 1;
@@ -138,11 +140,13 @@
       border-radius: 15px;
     }
 
-    .yes {
+    .yes,
+    .delete {
       background-color: limegreen;
     }
 
-    .no {
+    .no,
+    .dont {
       background-color: firebrick;
     }
   </style>
@@ -169,6 +173,9 @@
   </div>
   <div id="close-modal-window" class="close-modal-window">
     <!-- yes/no buttons -->
+  </div>
+  <div id="delete-modal" class="delete-modal">
+    <!-- delete modal buttons -->
   </div>
 
   <!-- load my app -->

@@ -123,8 +123,8 @@ function Carlot(name) {
   this.listCars = function () {
     const element = document.getElementById("car-list");
     let htmlToAdd = "";
-    const actionBtns = `<button class="delete-btn">Delete</button>
-    <button class="calc-btn">Calculate</button>`
+    const actionBtns = `<br><button class="delete-btn">Delete</button>
+    <button class="calc-btn">Calculate</button> `
     for (let car of this.cars) {
       htmlToAdd += `<li id="${car.id}" data-index="${car.id}" style="color:${car.color};">
       ${car.model}, year: ${car.year}, fuel consumption: ${car.fuelConsumption}, ${car.fuel} ${actionBtns}</li>`;
@@ -178,9 +178,20 @@ addBtn.addEventListener('click', function (e) {
 
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('delete-btn')) {
-    const id = parseInt(e.target.closest("li").getAttribute("data-index"));
+    deleteModal();
+  } else if (e.target.classList.contains('delete')) {
+    // const id = parseInt(e.target.closest("li").getAttribute("data-index"));
+    const id = parseInt(document.querySelectorAll('[data-index]')[0].getAttribute("data-index"));
+    console.log(id)
     myLot.deleteCar(id);
-  } else if (e.target.classList.contains("calc-btn")) {
+    console.log(myLot)
+    const deleteModalWindow = document.getElementById('delete-modal');
+    deleteModalWindow.classList.remove('active');
+  } else if (e.target.classList.contains('dont')) {
+    const deleteModalWindow = document.getElementById('delete-modal');
+    deleteModalWindow.classList.remove('active')
+  }
+  else if (e.target.classList.contains("calc-btn")) {
     const carId = parseInt(e.target.parentElement.id);
     console.log(myLot.calculateFuelConsumption(carId));
     displayModal(myLot.calculateFuelConsumption(carId));
@@ -194,7 +205,6 @@ document.addEventListener('click', function (e) {
     const modalWindow = document.getElementById("modal");
     closeModalWindow.classList.remove('active')
     modalWindow.classList.remove('active');
-    modalWindow.classList.remove('active');
   } else if (e.target.classList.contains('no')) {
     const closeModalWindow = document.getElementById('close-modal-window');
     closeModalWindow.classList.remove('active')
@@ -205,7 +215,6 @@ function displayModal(fuelConsumption) {
   const modalWindow = document.getElementById('modal');
   modalWindow.classList.add("active");
   modalWindow.innerHTML = `<h3>Fuel consumption is: ${fuelConsumption}</h3>
-  <br>
   <button class="close-modal">X</button>`;
 }
 
@@ -215,5 +224,14 @@ function closeModal() {
   closeModalWindow.innerHTML = `<h3>Are you sure?</h3>
   <button class="yes">YES</button>
   <button class="no">NO</button>
+  `;
+}
+
+function deleteModal() {
+  const deleteModalWindow = document.getElementById('delete-modal');
+  deleteModalWindow.classList.add("active");
+  deleteModalWindow.innerHTML = `<h3>Are you sure?</h3>
+  <button class="delete">YES</button>
+  <button class="dont">NO</button>
   `;
 }
