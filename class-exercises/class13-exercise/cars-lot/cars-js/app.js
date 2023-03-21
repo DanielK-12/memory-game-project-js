@@ -127,7 +127,7 @@ function Carlot(name) {
     <button class="calc-btn">Calculate</button>`
     for (let car of this.cars) {
       htmlToAdd += `<li id="${car.id}" data-index="${car.id}" style="color:${car.color};">
-      ${car.model},year: ${car.year},fuel consumption: ${car.fuelConsumption},${car.fuel}${actionBtns}</li>`;
+      ${car.model}, year: ${car.year}, fuel consumption: ${car.fuelConsumption}, ${car.fuel} ${actionBtns}</li>`;
     }
     element.innerHTML = htmlToAdd;
   }
@@ -184,9 +184,20 @@ document.addEventListener('click', function (e) {
     const carId = parseInt(e.target.parentElement.id);
     console.log(myLot.calculateFuelConsumption(carId));
     displayModal(myLot.calculateFuelConsumption(carId));
-  } else if (e.target.classList.contains("close-modal")) {
+    // } else if (e.target.classList.contains("close-modal")) {
+    //   const modalWindow = document.getElementById("modal");
+    //   modalWindow.classList.remove("active");
+  } else if (e.target.classList.contains('close-modal')) {
+    closeModal();
+  } else if (e.target.classList.contains('yes')) {
+    const closeModalWindow = document.getElementById('close-modal-window');
     const modalWindow = document.getElementById("modal");
-    modalWindow.classList.remove("active");
+    closeModalWindow.classList.remove('active')
+    modalWindow.classList.remove('active');
+    modalWindow.classList.remove('active');
+  } else if (e.target.classList.contains('no')) {
+    const closeModalWindow = document.getElementById('close-modal-window');
+    closeModalWindow.classList.remove('active')
   }
 });
 
@@ -194,5 +205,15 @@ function displayModal(fuelConsumption) {
   const modalWindow = document.getElementById('modal');
   modalWindow.classList.add("active");
   modalWindow.innerHTML = `<h3>Fuel consumption is: ${fuelConsumption}</h3>
+  <br>
   <button class="close-modal">X</button>`;
+}
+
+function closeModal() {
+  const closeModalWindow = document.getElementById('close-modal-window');
+  closeModalWindow.classList.add("active");
+  closeModalWindow.innerHTML = `<h3>Are you sure?</h3>
+  <button class="yes">YES</button>
+  <button class="no">NO</button>
+  `;
 }

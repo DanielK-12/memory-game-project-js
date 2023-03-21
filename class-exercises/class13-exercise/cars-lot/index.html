@@ -37,6 +37,16 @@
       top: 50%;
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
+      display: flex;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .close-modal {
+      display: flex;
+      align-self: flex-start;
+      justify-content: end;
+      color: red;
     }
 
     form {
@@ -69,6 +79,71 @@
       border-radius: 5px;
       font-size: 18px;
       font-weight: 600;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      align-self: center;
+    }
+
+    #car-list {
+      border: salmon solid 2px;
+      padding: 20px;
+      width: 456px;
+      margin: 0 auto;
+      border-radius: 15px;
+    }
+
+    #car-list li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    .delete-btn {
+      background-color: firebrick;
+    }
+
+    .calc-btn {
+      background-color: #0066ff;
+    }
+
+    h3 {
+      align-self: center;
+      justify-self: center;
+      margin: 0 auto;
+    }
+
+    .close-modal-window {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.9);
+      transform: scale(0) translate(-50%, -50%);
+      width: 450px;
+      height: 200px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .close-modal-window.active {
+      width: 400px;
+      height: 200px;
+      opacity: 1;
+      pointer-events: all;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      display: flex;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .yes {
+      background-color: limegreen;
+    }
+
+    .no {
+      background-color: firebrick;
     }
   </style>
 </head>
@@ -85,13 +160,15 @@
     <input type="number" name="distance" id="distance" placeholder="Enter the distance">
     <br>
     <button id="add-btn">Add Vehicle</button>
-    <p class="error-msg"></p>
   </form>
   <div id="car-list">
     <!-- list the added vehicles -->
   </div>
   <div id="modal" class="modal">
     <!-- print the distance cost -->
+  </div>
+  <div id="close-modal-window" class="close-modal-window">
+    <!-- yes/no buttons -->
   </div>
 
   <!-- load my app -->
