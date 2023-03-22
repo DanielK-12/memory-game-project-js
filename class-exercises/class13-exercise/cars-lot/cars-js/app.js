@@ -178,10 +178,10 @@ addBtn.addEventListener('click', function (e) {
 
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('delete-btn')) {
-    deleteModal();
+    const id = parseInt(e.target.closest('li').getAttribute("data-index"));
+    deleteModal(id);
   } else if (e.target.classList.contains('delete')) {
-    // const id = parseInt(e.target.closest("li").getAttribute("data-index"));
-    const id = parseInt(document.querySelector('li').getAttribute("data-index"));
+    const id = parseInt(e.target.getAttribute('data-index'));
     myLot.deleteCar(id);
     const deleteModalWindow = document.getElementById('delete-modal');
     deleteModalWindow.classList.remove('active');
@@ -225,11 +225,11 @@ function closeModal() {
   `;
 }
 
-function deleteModal() {
+function deleteModal(id) {
   const deleteModalWindow = document.getElementById('delete-modal');
   deleteModalWindow.classList.add("active");
   deleteModalWindow.innerHTML = `<h3>Are you sure?</h3>
-  <button class="delete">YES</button>
+  <button class="delete" data-index="${id}">YES</button>
   <button class="dont">NO</button>
   `;
 }
