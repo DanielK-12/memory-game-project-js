@@ -88,3 +88,19 @@ function printContent(data) {
   <span>${data.year}</span>
   `;
 }
+
+document.querySelector("#portfolio").addEventListener('click', function (e) {
+  e.preventDefault();
+  fetch('portfolio.json').then(response => response.json()).then(files => printPortfolio(files));
+});
+
+function printPortfolio(files) {
+  console.log(files);
+  const element = document.querySelector('#portfolio-page');
+  element.innerHTML = "";
+  element.innerHTML = `<h3>${files.page}</h3>
+  <img src="${files.imgUrl}" alt="${files.page}"><br>
+  <p>${files.portfolioDesc}</p><br>
+  <p>Born: ${files.birthDate}</p><br>
+  <iframe width="469" height="833" src="${files.socialMedia}" title="r nine t scrambler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+}

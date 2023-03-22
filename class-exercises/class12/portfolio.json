@@ -1,5 +1,7 @@
 {
-  "projectName": "Web design for e-shop",
-  "projectUrl": "https://...",
-  "projectDesc": "asdasdsad"
+  "page": "Portfolio",
+  "imgUrl": "https://e1.pxfuel.com/desktop-wallpaper/904/144/desktop-wallpaper-1080x1920-bmw-r-ninet-falcon-motorcycle-iphone-bmw-thumbnail.jpg",
+  "portfolioDesc": "Hi im Daniel Kochovski, a huge motorcycle enthusiast and Web Dev student",
+  "birthDate": "1990/04/12",
+  "socialMedia": "https://www.youtube.com/embed/22Q8raTCZDg"
 }
