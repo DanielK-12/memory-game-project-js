@@ -161,8 +161,8 @@ function Car(model, year, color, fuel, fuelConsumption, distance) {
 // carlot instance
 
 const myLot = new Carlot("SEDC RENT A CAR");
-
 const addBtn = document.getElementById("add-btn");
+
 addBtn.addEventListener('click', function (e) {
   e.preventDefault();
   const model = document.getElementById('model').value;

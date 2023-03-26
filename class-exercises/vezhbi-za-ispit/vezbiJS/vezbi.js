@@ -146,21 +146,21 @@ In every table cell print which row and column it is (ex. Row-3 Column-1)
 
 // time = 3
 
-let today = new Date();
-let time = today.getHours();
-console.log(time);
+// let today = new Date();
+// let time = today.getHours();
+// console.log(time);
 
-let hoursOfDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-let n = hoursOfDay.length;
+// let hoursOfDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+// let n = hoursOfDay.length;
 
-let result = [];
-for (let i = time; i > 0; i--) {
-  result.push(i + ":00");
-}
-for (let i = n; i > time; i--) {
-  result.push(i + ":00");
-}
-console.log(result);
+// let result = [];
+// for (let i = time; i > 0; i--) {
+//   result.push(i + ":00");
+// }
+// for (let i = n; i > time; i--) {
+//   result.push(i + ":00");
+// }
+// console.log(result);
 // let k = time;
 // k = k % n;
 // let i, j;
@@ -186,4 +186,68 @@ console.log(result);
 // console.log(k + hoursOfDay);
 
 
+// Moja vezhba / games library
 
+function GameLibrary(name) {
+  this.name = name;
+  this.games = [];
+  // methods
+  // add game
+
+  this.addGame = function (game) {
+    this.games.push(game);
+  }
+
+  // print games
+
+  this.listGames = function () {
+    const element = document.getElementById("games-list");
+    let htmlToAdd = '';
+    const actionBtn = `<br><button class="delete-btn">Delete</button>`
+    for (let game of this.games) {
+      htmlToAdd += `<li id ="${game.id}">
+      ${game.name}, Year: ${game.year}, Genre:${game.genre} ${actionBtn}</li>`;
+    }
+    element.innerHTML = htmlToAdd;
+  }
+
+  // delete game method
+  this.deleteGame = function (id) {
+    const game = this.games.find(x => x.id === id);
+    if (game) {
+      const position = this.games.indexOf(game);
+      this.games.splice(position, 1);
+      this.listGames();
+    }
+  }
+}
+
+function Game(name, year, genre) {
+  this.id = Date.now();
+  this.name = name;
+  this.year = year;
+  this.genre = genre;
+}
+
+// Game library instance 
+
+const myLibrary = new GameLibrary("Steam");
+
+const addBtn = document.getElementById("add-game");
+addBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const year = document.getElementById("year").value;
+  const genre = document.getElementById("genre").value;
+
+  myLibrary.addGame(new Game(name, year, genre));
+  myLibrary.listGames();
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains("delete-btn")) {
+    const id = parseInt(e.target.closest("li").getAttribute("id"));
+    myLibrary.deleteGame(id);
+    myLibrary.listGames();
+  }
+});
