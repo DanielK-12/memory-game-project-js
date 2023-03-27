@@ -29,9 +29,6 @@ function Bookstore(name) {
   // add to wishlist
   this.addToWishlist = function (id) {
     const book = this.products.find(x => x.id === id);
-    const btnWish = document.getElementById(book.id).querySelector(".wishlist-btn");
-    btnWish.disabled = true;
-    console.log(btnWish);
 
     if (book) {
       this.wishList.push(book);
@@ -98,9 +95,9 @@ function Bookstore(name) {
   // remove wishlish
 
   this.removeFromwishList = function (index) {
-
-    const btnWish = this.wishList.splice(index, 1);
-    btnWish.disabled = true;
+    this.wishList.splice(index, 1);
+    const btnWish = document.querySelector(".wishlist-btn");
+    btnWish.disabled = false;
   }
 }
 
@@ -143,6 +140,8 @@ document.addEventListener('click', function (e) {
     const index = parseInt(e.target.closest("li").id);
     myStore.addToWishlist(index);
     myStore.printWishlist();
+    const btnWish = document.querySelector(".wishlist-btn");
+    btnWish.disabled = true;
   } else if (e.target.classList.contains("remove-shopping-item")) {
     const index = parseInt(e.target.closest("li").getAttribute("data-index"));
     myStore.removeFromCart(index);
