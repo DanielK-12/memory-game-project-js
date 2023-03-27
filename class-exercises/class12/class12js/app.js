@@ -88,7 +88,11 @@ function printContent(data) {
   <span>${data.year}</span>
   `;
 }
-
+// let portfolioBtn = document.querySelector("#portfolio");
+// portfolioBtn.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   fetch('portfolio.json').then(response => response.json()).then(files => printPortfolio(files));
+// });
 document.querySelector("#portfolio").addEventListener('click', function (e) {
   e.preventDefault();
   fetch('portfolio.json').then(response => response.json()).then(files => printPortfolio(files));
