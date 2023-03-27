@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="main">
+        <h2>Simple Books Store</h2>
+        <div class="container">
+            <div class="form-wrapper">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="title" value="Learn JavaScript">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" placeholder="author" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="cover">Cover URL</label>
+                        <input type="text" id="thumbnail" placeholder="cover image link" value="https://bit.ly/2PxhFm8">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" id="price" placeholder="price" value="1500.50">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" placeholder="quantity" value="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Short description</label>
+                        <textarea id="description" cols="30" rows="10"
+                            placeholder="description">an excellent book for...</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button id="add-btn" class="btn">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="result-wrapper">
+                <div class="shopping-group">
+                    <div>
+                        <h3> Shopping cart</h3>
+                        <ol id="shopping-cart">
+                            <li id="1"> True nature. Part 2 John Doe 1500 <a href="#" class="remove-book-cart" id="1">
+                                    remove </a> </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3>Wishlist</h3>
+                        <ol id="wishlist">
+                            <li id="1"> True nature. Part 2 John Doe 1500 <a href="#" class="remove-book-wish" id="1">
+                                    remove </a> </li>
+                        </ol>
+                    </div>
+                </div>
+                <ol id="books-list">
+                    <li id="1" class="card">
+                        <div class="card-title"> True nature. Part 2 </div>
+                        <div class="card-img"> <img src="https://bit.ly/2PxhFm8"> </div>
+                        <div class="card-description"> Realy nice book and easy to read and cant res... </div>
+                        <div class="card-price"> Price: 1500 den.</div>
+                        <div class="card-quantity"> Quantity: 17 </div>
+                        <div class="card-actions">
+                            <button class="buy-btn btn buy"> buy </button>
+                            <button class="wishlist-btn btn"> add to wishlist </button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -62,7 +62,8 @@ function Smartphoneshop(name) {
     let htmlToAdd = "";
     let index = 0;
     for (let product of this.shoppingCart) {
-      htmlToAdd += `<li data-index="${index}" id="product-${product.id}">${product.name}<a href="#" class="remove-shopping-item" id="${product.id}">Remove</a> </li>`;
+      htmlToAdd += `<li data-index="${index}" id="product-${product.id}">${product.name}
+      <a href="#" class="remove-shopping-item" id="${product.id}">Remove</a> </li>`;
       index++;
     }
     element.innerHTML = htmlToAdd;
@@ -74,6 +75,12 @@ function Smartphoneshop(name) {
     this.products[position].qty++;
     this.shoppingCart.splice(id, 1);
     this.listProducts();
+
+
+  }
+  // remove from wishlist
+  this.removeFromwishList = function (index) {
+    this.wishList.splice(index, 1);
 
 
     // print wishlist
@@ -89,6 +96,7 @@ function Smartphoneshop(name) {
       element.innerHTML = htmlToAdd;
     }
   }
+
 }
 
 
@@ -127,15 +135,16 @@ document.addEventListener('click', function (e) {
     myStore.addToCart(id);
     myStore.printCart();
   } else if (e.target.classList.contains('wishlist-btn')) {
-    const id = parseInt(e.target.closest('li').id);
-    myStore.addToWishlist(id);
+    const index = parseInt(e.target.closest('li').id);
+    myStore.addToWishlist(index);
     myStore.printWishlist();
   } else if (e.target.classList.contains("remove-shopping-item")) {
     const index = parseInt(e.target.closest("li").getAttribute("data-index"));
     myStore.removeFromCart(index);
     myStore.printCart();
   } else if (e.target.classList.contains('remove-wishlist-item')) {
-    myStore.removeFromwishList(index);
+    const indexx = parseInt(e.target.closest("li").getAttribute("data-index"))
+    myStore.removeFromwishList(indexx);
     myStore.printWishlist();
   }
 });

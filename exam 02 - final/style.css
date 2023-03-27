@@ -1,0 +1,95 @@
+.main {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.container {
+	display: flex;
+}
+
+.form-wrapper {
+	flex-basis: 30%;
+	padding: 15px;
+}
+
+.result-wrapper {
+	flex-basis: 70%;
+	padding: 15px;
+	border-left: 1px solid #ddd;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	padding: 8px;
+	font-weight: bold;
+}
+
+.shopping-group {
+	display: flex;
+}
+
+.form-group input,
+textarea {
+	padding: 8px 16px;
+	width: 100%;
+}
+
+#books-list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 15px;
+	margin: 15px;
+	width: 33%;
+}
+
+.card-img img {
+	max-width: 100%;
+	display: block;
+}
+
+.card-title {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.card-description {
+	color: #3e3c3c;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.card-price,
+.card-quantity {
+	font-size: 14px;
+	color: gray;
+}
+
+.card-actions {
+	margin-top: 15px;
+}
+
+.btn {
+	background-color: #ebeeeb;
+	border: none;
+	padding: 5px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.buy {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+}
