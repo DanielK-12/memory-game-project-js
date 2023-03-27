@@ -17,8 +17,11 @@ function Smartphoneshop(name) {
     const phone = this.products.find(x => x.id === id);
     const position = this.products.indexOf(phone);
     this.products[position].qty--;
+    this.listProducts();
+
     if (phone) {
       this.shoppingCart.push(phone);
+
     }
   }
 
@@ -59,36 +62,40 @@ function Smartphoneshop(name) {
     let htmlToAdd = "";
     let index = 0;
     for (let product of this.shoppingCart) {
-      htmlToAdd += `<li data-index="${index}" id="${product.id}">${product.name}<a href="#" class="remove-shopping-item" id="${product.id}">Remove</a> </li>`;
+      htmlToAdd += `<li data-index="${index}" id="product-${product.id}">${product.name}<a href="#" class="remove-shopping-item" id="${product.id}">Remove</a> </li>`;
       index++;
     }
     element.innerHTML = htmlToAdd;
   }
 
   // remove from cart
-  this.removeFromCart = function (idx) {
-    this.shoppingCart.splice(idx, 1);
-  }
+  this.removeFromCart = function (id) {
+    const position = this.products.indexOf(this.shoppingCart[id]);
+    this.products[position].qty++;
+    this.shoppingCart.splice(id, 1);
+    this.listProducts();
 
-  // print wishlist
-  this.printWishlist = function () {
-    const element = document.getElementById('wishlist');
-    let htmlToAdd = '';
-    let index = 0;
-    for (let product of this.wishList) {
-      htmlToAdd += `<li data-index="${index}" id="${product.id}">${product.name}, ${product.price}<a href="#" class="remove-wishlist-item"
+
+    // print wishlist
+    this.printWishlist = function () {
+      const element = document.getElementById('wishlist');
+      let htmlToAdd = '';
+      let index = 0;
+      for (let product of this.wishList) {
+        htmlToAdd += `<li data-index="${index}" id="${product.id}">${product.name}, ${product.price}<a href="#" class="remove-wishlist-item"
       id="${product.id}">Remove</a> </li>`;
-      index++;
+        index++;
+      }
+      element.innerHTML = htmlToAdd;
     }
-    element.innerHTML = htmlToAdd;
   }
 }
-
 
 
 function Product(name, brand, imageURL, price, quantity, description) {
   this.id = Date.now();
   this.name = name;
+  this.brand = brand;
   this.imageURL = imageURL;
   this.price = price;
   this.qty = quantity;
