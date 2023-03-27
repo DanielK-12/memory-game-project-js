@@ -1,17 +1,18 @@
-*{
+* {
     background-color: #e0e1dd;
 }
+
 .main {
     width: 600px;
     margin: 50px auto;
 }
 
-.todo-list {
+.render-todo-list {
     list-style: none;
     padding-left: 0;
 }
 
-.todo-list li {
+.render-todo-list li {
     margin-bottom: 5px;
     display: flex;
     align-items: center;
@@ -37,8 +38,9 @@ input[type="text"] {
     border-radius: 3px;
     color: #fff;
 }
-.todo-task button:hover{
-    background-color: #0d1b2a; 
+
+.todo-task button:hover {
+    background-color: #0d1b2a;
     cursor: pointer;
 }
 
