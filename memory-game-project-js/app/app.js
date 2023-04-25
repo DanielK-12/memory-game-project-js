@@ -34,8 +34,10 @@ function matchCards(img1, img2) {
     printScore();
 
     if (matched == 8) {
+      resetScore();
+      printScore();
       setTimeout(() => {
-        return shuffleCard();
+        shuffleCard();
       }, 1000);
     }
     cardOne.removeEventListener("click", flipCard);
@@ -92,3 +94,8 @@ shuffleCard();
 cards.forEach(card => {
   card.addEventListener("click", flipCard);
 });
+
+function resetScore() {
+  players[1].score = 0;
+  players[2].score = 0;
+}
