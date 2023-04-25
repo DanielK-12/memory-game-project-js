@@ -3,6 +3,9 @@ const cards = document.querySelectorAll(".card");
 let matched = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+let player1 = 0;
+let player2 = 0;
+
 // functions
 function flipCard({ target: clickedCard }) {
   if (cardOne !== clickedCard && !disableDeck) {
@@ -21,6 +24,7 @@ function flipCard({ target: clickedCard }) {
 function matchCards(img1, img2) {
   if (img1 === img2) {
     matched++;
+    player1++;
     if (matched == 8) {
       setTimeout(() => {
         return shuffleCard();
