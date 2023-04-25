@@ -1,19 +1,25 @@
 const cards = document.querySelectorAll(".card");
+const player1score = document.getElementById("1");
+const player2score = document.getElementById("2");
+const player1 = document.getElementsByClassName("player1")[0];
+const player2 = document.getElementsByClassName("player2")[0];
 
 let matched = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
-let player1 = 0;
-let player2 = 0;
-
+let activePlayer = 1;
+let players = {
+  1: { name: 'player1', score: 0 },
+  2: { name: 'player2', score: 0 }
+};
 // functions
-function flipCard({ target: clickedCard }) {
-  if (cardOne !== clickedCard && !disableDeck) {
-    clickedCard.classList.add("flip");
+function flipCard({ target }) {
+  if (cardOne !== target && !disableDeck) {
+    target.classList.add("flip");
     if (!cardOne) {
-      return cardOne = clickedCard;
+      return cardOne = target;
     }
-    cardTwo = clickedCard;
+    cardTwo = target;
     disableDeck = true;
     let cardOneImg = cardOne.querySelector(".back-view img").src,
       cardTwoImg = cardTwo.querySelector(".back-view img").src;
@@ -24,7 +30,9 @@ function flipCard({ target: clickedCard }) {
 function matchCards(img1, img2) {
   if (img1 === img2) {
     matched++;
-    player1++;
+    players[activePlayer].score++;
+    printScore();
+
     if (matched == 8) {
       setTimeout(() => {
         return shuffleCard();
@@ -46,7 +54,19 @@ function matchCards(img1, img2) {
     cardOne = cardTwo = "";
     disableDeck = false;
   }, 1200);
+  changeActivePlayer();
 }
+
+function changeActivePlayer() {
+  activePlayer = activePlayer === 1 ? 2 : 1;
+  if (activePlayer === 1) {
+    player1.classList.add("active");
+    player2.classList.remove("active");
+  } else {
+    player2.classList.add("active");
+    player1.classList.remove("active");
+  }
+};
 
 function shuffleCard() {
   matched = 0;
@@ -61,6 +81,11 @@ function shuffleCard() {
     card.addEventListener("click", flipCard);
   });
 }
+
+function printScore() {
+  player1score.innerText = players[1].score;
+  player2score.innerText = players[2].score;
+};
 
 shuffleCard();
 

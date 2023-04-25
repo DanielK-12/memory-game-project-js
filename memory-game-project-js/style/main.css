@@ -133,6 +133,11 @@ h1 {
   width: 200px;
 }
 
+.active {
+  color: rgb(114, 157, 250);
+  ;
+}
+
 @media screen and (max-width: 700px) {
   .cards {
     height: 350px;
