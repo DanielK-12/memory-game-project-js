@@ -95,9 +95,7 @@ h1 {
   transition: transform 0.25s linear;
 }
 
-.front-view {
-  background-color: salmon;
-}
+
 
 .card .front-view img {
   width: 80px;
@@ -109,6 +107,7 @@ h1 {
 
 .card .back-view {
   transform: rotateY(-180deg);
+  background-color: rgb(114, 157, 250);
 }
 
 .card.flip .back-view {
