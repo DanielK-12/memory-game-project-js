@@ -99,3 +99,18 @@ function resetScore() {
   players[1].score = 0;
   players[2].score = 0;
 }
+
+let timeLeft = 30;
+let time = document.getElementById('timer');
+
+let timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (timeLeft == -1) {
+    clearTimeout(timerId);
+    changeActivePlayer();
+  } else {
+    time.innerHTML = timeLeft + ' seconds remaining';
+    timeLeft--;
+  }
+}
