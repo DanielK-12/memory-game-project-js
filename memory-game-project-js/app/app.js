@@ -3,6 +3,9 @@ const player1score = document.getElementById("1");
 const player2score = document.getElementById("2");
 const player1 = document.getElementsByClassName("player1")[0];
 const player2 = document.getElementsByClassName("player2")[0];
+const infoMsg = document.getElementById('info-msg');
+const TURN_DURATION = 30;
+let interval = undefined;
 
 let matched = 0;
 let cardOne, cardTwo;
@@ -14,6 +17,9 @@ let players = {
 };
 // functions
 function flipCard({ target }) {
+  if (!interval) {
+    interval = setInterval(countdown, 1000);
+  }
   if (cardOne !== target && !disableDeck) {
     target.classList.add("flip");
     if (!cardOne) {
@@ -34,8 +40,11 @@ function matchCards(img1, img2) {
     printScore();
 
     if (matched == 8) {
+      infoMsg.innerText = players[1].score > players[2].score ? "Player 1 won! Click on any card to start new game!" : "Player 2 won! Click on any card to start new game!";
       resetScore();
       printScore();
+      clearInterval(interval);
+      interval = undefined;
       setTimeout(() => {
         shuffleCard();
       }, 1000);
@@ -56,7 +65,7 @@ function matchCards(img1, img2) {
     cardOne = cardTwo = "";
     disableDeck = false;
   }, 1200);
-  changeActivePlayer();
+  resetCountdown();
 }
 
 function changeActivePlayer() {
@@ -64,9 +73,11 @@ function changeActivePlayer() {
   if (activePlayer === 1) {
     player1.classList.add("active");
     player2.classList.remove("active");
+    countdown();
   } else {
     player2.classList.add("active");
     player1.classList.remove("active");
+    countdown();
   }
 };
 
@@ -100,17 +111,20 @@ function resetScore() {
   players[2].score = 0;
 }
 
-let timeLeft = 30;
-let time = document.getElementById('timer');
-
-let timerId = setInterval(countdown, 1000);
+let timeLeft = TURN_DURATION;
 
 function countdown() {
-  if (timeLeft == -1) {
-    clearTimeout(timerId);
-    changeActivePlayer();
-  } else {
-    time.innerHTML = timeLeft + ' seconds remaining';
-    timeLeft--;
+  timeLeft--;
+  infoMsg.innerHTML = timeLeft + ' seconds remaining';
+
+  if (timeLeft < 1) {
+    resetCountdown()
   }
+
 }
+
+function resetCountdown() {
+  timeLeft = TURN_DURATION;
+  changeActivePlayer();
+}
+
